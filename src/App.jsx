@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import Navbar from './component/Navbar'
+import Navbar from './component/navbar/Navbar'
 import './App.css'
 import MediaCard from './component/Cards'
 
+
 function App() {
   
-
   return (
-    <>
-      <Navbar/>
-      <MediaCard/>
-
-    </>
+  <div className='container'>
+    <Navbar/>
+  </div>
   )
 }
 
