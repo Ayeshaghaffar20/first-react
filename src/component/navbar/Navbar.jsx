@@ -7,16 +7,29 @@ import search_icon_dark from '../../assets/images/search-b.png'
 import toggle_light from '../../assets/images/night.png'
 import toggle_dark from '../../assets/images/day.png'
 
+import {
+BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from '../../pages/Home'
+import Products from '../../pages/Products'
+import Features from '../../pages/Features'
+import About from '../../pages/About'
+
 const Navbar = () => {
   return (
-    <div className='navbar'>
+    <Router>
+    <div className='CustomNavbar'>
         <img src={logo_light} alt="" className='logo' />
 
+
         <ul>
-            <li>Home</li>
-            <li>Products</li>
-            <li>Features</li>
-            <li>About</li>
+            <Link to="/">Home</Link>
+             <Link to="/products">Producs</Link>
+              <Link to="/features">Features</Link>
+               <Link to="/about">About</Link>
         </ul>
 
         <div className='searchBox'>
@@ -26,8 +39,22 @@ const Navbar = () => {
         </div>
 
         <img src={toggle_light} alt="" className='toggleIcon' />
+
+          {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Routes>
+          <Route path="/about" element={<About />} />
+           <Route path="/features" element={<Features />} />
+            
+
+          <Route path="/products" element={<Products />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+
+        
       
     </div>
+    </Router>
   )
 }
 
