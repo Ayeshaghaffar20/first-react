@@ -5,10 +5,13 @@ import MediaCard from './component/Cards'
 
 
 function App() {
+
+  const [theme,setTheme] = useState('light')
   
   return (
   <div className='container'>
     <Navbar/>
+    {/* <MediaCard/> */}
   </div>
   )
 }
